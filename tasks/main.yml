@@ -22,6 +22,7 @@
   with_items:
     - { regexp: "^Port:", line: "Port: {{ apt_cacher_ng_port }}" }
     - { regexp: "^CacheDir:\ ", line: "CacheDir: {{ apt_cacher_ng_cache_dir }}" }
+    - { regexp: "^PassThroughPattern:\ ", line: "PassThroughPattern: ^(.*):443$"}
   notify:
     - restart apt-cacher-ng
 
